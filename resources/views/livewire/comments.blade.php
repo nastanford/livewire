@@ -6,14 +6,14 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <form class="row align-items-center">
+      <div class="row align-items-center">
         <div class="col-10">
           <div class="input-group">
             <input type="text" class="form-control" id="comment" placeholder="">
           </div>
         </div>
         <div class="col-2">
-          <button type="submit" class="btn btn-primary" wire:click="addComment">Add</button>
+          <button class="btn btn-primary" wire:click="addComment">Add</button>
       </div>
       @foreach ($comments as $index => $comment)
         <div class="col-12" wire:key="comment-{{ $index }}">
@@ -23,8 +23,7 @@
           </div>
         </div>
       @endforeach
-
-      </form>
+      </div>
     </div>
   </div>
   <div class="row">
