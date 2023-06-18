@@ -9,7 +9,7 @@
       <div class="row align-items-center">
         <div class="col-10">
           <div class="input-group">
-            <input type="text" class="form-control" id="comment" placeholder="">
+            <input type="text" class="form-control" wire:model="newComment" id="comment" placeholder="">
           </div>
         </div>
         <div class="col-2">

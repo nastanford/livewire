@@ -3,6 +3,8 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Carbon\Carbon;
+
 
 class Comments extends Component
 {
@@ -15,13 +17,16 @@ class Comments extends Component
     ]
   ];
 
+
+  public $newComment;
   public function addComment()
   {
-    $this->comments[] = [
-      'body' => 'New Comment',
-      'created_at' => '1 min ago',
+    array_unshift($this->comments, [
+      'body' => $this->newComment,
+      'created_at' => Carbon::now()->diffForHumans(),
       'creator' => 'Jim Sample',
-    ];
+    ]);
+    $this->newComment = "";
   }
 
   public function render()
